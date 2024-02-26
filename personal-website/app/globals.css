@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-decoration-color: rgb(88, 224, 163);
+  text-underline-offset: 0.2em;
+  background-image: linear-gradient(to right bottom, rgb(68, 125, 216), rgb(88, 224, 163));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-image 0.8s ease-in-out;
+}
+
+a:hover {
+  background-image: linear-gradient(to right bottom, rgb(36, 59, 208), rgb(163, 88, 224));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration-color: rgb(163, 88, 224);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
